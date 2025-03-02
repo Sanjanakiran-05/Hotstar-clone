@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotstar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+
+        .container {
+            background-color: brown;
+            width: 100%;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: rgb(0, 0, 0);
+            width: 8vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            margin-bottom: 60px;
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 17px;
+            color: rgb(108, 108, 108);
+            font-weight: 200;
+            margin-bottom: 35px;
+        }
+
+        nav i:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+        .main {
+            width: 92vw;
+            min-height: 100vh;
+            background-color: rgb(0, 0, 0);
+            float: right;
+        }
+
+        .sec1 {
+            padding: 10px;
+            background-color: rgb(12, 12, 12);
+            display: flex;
+        }
+
+        .movie {
+            width: 50%;
+            border-radius: 15px;
+        }
+
+        .grp {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+            margin-bottom: 150px;
+            color: white;
+        }
+
+        .dlogo {
+            width: 40px;
+            border-radius: 2px;
+        }
+
+        .text {
+            font-family: calibri;
+        }
+
+        .stream {
+            color: rgb(154, 154, 154);
+            font-size: 14px;
+        }
+
+        .desc {
+            font-family: calibri;
+            margin-top: 85px;
+            margin-left: -200px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .desc1 {
+            font-family: calibri;
+            margin-top: 120px;
+            margin-left: -335px;
+            font-weight: 400;
+        }
+
+        .trial {
+            font-size: 20px;
+            margin-bottom: -350px;
+            margin-left: -120px;
+            background-color: #383c52;
+            border: none;
+            width: 130px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .trial:hover {
+            cursor: pointer;
+            background-color: #373764;
+        }
+
+        .movie,
+        .watch,
+        .dlogo:hover {
+            cursor: pointer;
+        }
+
+        .sec2 {
+            min-height: 90vh;
+        }
+
+        .movie2 {
+            width: 100%;
+            position: sticky;
+            top: 0px;
+        }
+
+        .movie2:hover {
+            cursor: pointer;
+        }
+
+        .movdesc {
+            width: 100%;
+            min-height: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            bottom: 370px;
+            background: linear-gradient(to bottom, transparent, #00000079, #000000);
+
+        }
+
+        .new {
+            font-family: calibri;
+            color: rgb(70, 145, 250);
+            text-shadow: 0 0 20px black;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .three {
+            color: white;
+            font-family: calibri;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .ted1 {
+            color: white;
+            font-family: calibri;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .drama {
+            color: white;
+            font-family: calibri;
+        }
+
+        .watch {
+            margin-top: 30px;
+            font-size: 15px;
+            text-shadow: 0 0 30px rgb(0, 0, 0);
+            padding: 10px;
+            width: 300px;
+            border-radius: 7px;
+            border: none;
+            background: #009FFF;
+            background: -webkit-linear-gradient(to left, #ec2F4B, #009FFF);
+            background: linear-gradient(to left, #ec2F4B, #009FFF);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sec3 {
+            width: 100%;
+            min-height: 250px;
+            background-color: black;
+            padding: 25px;
+            position: relative;
+            bottom: 370px;
+
+        }
+
+        .lr {
+            font-size: 25px;
+            font-family: calibri;
+            color: white;
+            font-weight: 500;
+        }
+
+        .film {
+            padding: 18px;
+            display: flex;
+            overflow: scroll;
+            gap: 20px;
+        }
+        .film1{
+            width: 350px;
+            height: 60px;
+            padding: 10px;
+            display: flex;
+            overflow: scroll;
+            gap: 10px;
+            margin-left: 700px;
+            margin-top: -60px;
+        }
+        .series,.s1 {
+            border-radius: 5px;
+            transition: 0.4s all ease;
+        }
+        .s1:hover{
+            scale: 1.2;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .series:hover {
+            scale: 1.1;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="logo.png" alt="" width="55px" class="logo">
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-tv"></i>
+            <i class="fa-solid fa-cookie"></i>
+            <i class="fa-solid fa-person-running"></i>
+            <i class="fa-solid fa-video"></i>
+            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-circle-user"></i>
+        </nav>
+        <div class="main">
+            <!-- section1 -->
+            <div class="sec1">
+                <img src="dare.jpg" alt="" class="movie">
+                <div class="grp">
+                    <img src="dlogo.png" alt="" class="dlogo">
+                    <div class="text">
+                        <p class="mb-0">Daredevil</p>
+                        <p class="stream mb-0">Streaming From March 5</p>
+                    </div>
+                    <p class="desc">Daredevil's secret life is on the line in this gripping</p>
+                    <p class="desc1">superhero drama!</p>
+                    <button class="trial">Trailer</button>
+                </div>
+            </div>
+            <!-- section2 -->
+            <div class="sec2">
+                <img src="la.jpg" alt="" class="movie2">
+                <div class="movdesc">
+                    <img src="lalogo.avif" alt="" width="250px">
+                    <p class="new">New Release</p>
+                    <b class="three">2025 . U/A 16+ . 1 Season . 5 Languages</b>
+                    <div class="ted1">
+                        <p>Ted Black, a former federal prosecutor from New York,</p>
+                        <p>has reinvented himself representing the most powerful </p>
+                        <p>clients in Los Angeles.</p>
+                    </div>
+                    <b class="drama">Drama | Dramedy | Court Drama | Celebrities</b>
+                    <button class="watch">Subscribe to Watch</button>
+                    <div class="film1">
+                        <img src="1.1.avif" alt="" height="40px" class="s1">
+                        <img src="2.1.avif" alt="" height="40px" class="s1">
+                        <img src="3.1.avif" alt="" height="40px" class="s1">
+                        <img src="4.1.avif" alt="" height="40px" class="s1">
+                        <img src="5.1.avif" alt="" height="40px" class="s1">
+                        <img src="1.1.avif" alt="" height="40px" class="s1">
+                        <img src="2.1.avif" alt="" height="40px" class="s1">
+                        <img src="3.1.avif" alt="" height="40px" class="s1">
+                        <img src="4.1.avif" alt="" height="40px" class="s1">
+                        <img src="5.1.avif" alt="" height="40px" class="s1">
+                    </div>
+                </div>
+                <div class="sec3">
+                    <h5 class="lr">Latest Releases</h5>
+                    <div class="film">
+                        <img src="1.jpg" alt="" width="180px" class="series">
+                        <img src="2.jpg" alt="" width="180px" class="series">
+                        <img src="3.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="5.jpg" alt="" width="180px" class="series">
+                        <img src="1.jpg" alt="" width="180px" class="series">
+                        <img src="2.jpg" alt="" width="180px" class="series">
+                        <img src="3.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Studios</h5>
+                    <div class="film">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5598/1739441155598-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5223/1535223-a-292dbf42783d" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5731/1739780835731-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7816/1739359307816-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/583/1739358280583-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5224/1535224-a-1d1cfe20ffa3" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5226/1535226-a-3080287f77cd" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5228/1535228-a-fb6607a8214c" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5225/1535225-a-58f3d258b91e" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Team Marvel or Team DC?</h5>
+                    <div class="film">
+                        <img src="md-1.jpg" alt="" width="180px" class="series">
+                        <img src="md-2.png" alt="" width="180px" class="series">
+                        <img src="md-3.png" alt="" width="180px" class="series">
+                        <img src="md-4.png" alt="" width="180px" class="series">
+                        <img src="md-5.png" alt="" width="180px" class="series">
+                        <img src="md-1.jpg" alt="" width="180px" class="series">
+                        <img src="md-2.png" alt="" width="180px" class="series">
+                        <img src="md-3.png" alt="" width="180px" class="series">
+                        <img src="md-4.png" alt="" width="180px" class="series">
+                        <img src="md-5.png" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Popular Languages</h5>
+                    <div class="film">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Latest Releases</h5>
+                    <div class="film">
+                        <img src="1.jpg" alt="" width="180px" class="series">
+                        <img src="2.jpg" alt="" width="180px" class="series">
+                        <img src="3.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="5.jpg" alt="" width="180px" class="series">
+                        <img src="1.jpg" alt="" width="180px" class="series">
+                        <img src="2.jpg" alt="" width="180px" class="series">
+                        <img src="3.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Studios</h5>
+                    <div class="film">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5598/1739441155598-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5223/1535223-a-292dbf42783d" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5731/1739780835731-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7816/1739359307816-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/583/1739358280583-a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5224/1535224-a-1d1cfe20ffa3" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5226/1535226-a-3080287f77cd" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5228/1535228-a-fb6607a8214c" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5225/1535225-a-58f3d258b91e" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Team Marvel or Team DC?</h5>
+                    <div class="film">
+                        <img src="md-1.jpg" alt="" width="180px" class="series">
+                        <img src="md-2.png" alt="" width="180px" class="series">
+                        <img src="md-3.png" alt="" width="180px" class="series">
+                        <img src="md-4.png" alt="" width="180px" class="series">
+                        <img src="md-5.png" alt="" width="180px" class="series">
+                        <img src="md-1.jpg" alt="" width="180px" class="series">
+                        <img src="md-2.png" alt="" width="180px" class="series">
+                        <img src="md-3.png" alt="" width="180px" class="series">
+                        <img src="md-4.png" alt="" width="180px" class="series">
+                        <img src="md-5.png" alt="" width="180px" class="series">
+                    </div>
+                    <h5 class="lr">Popular Languages</h5>
+                    <div class="film">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61" alt="" width="180px" class="series">
+                        <img src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a" alt="" width="180px" class="series">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
