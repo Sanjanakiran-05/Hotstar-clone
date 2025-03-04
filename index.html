@@ -17,18 +17,19 @@
         }
 
         .container {
-            background-color: brown;
+            background-color: rgb(0, 0, 0);
             width: 100%;
-            height: 100vh;
+            height: 540vh;
         }
-
+        body{
+            background-color: #000000;
+        }
         nav {
             background-color: rgb(0, 0, 0);
-            width: 8vw;
+            width: 15vw;
             height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-evenly;
             flex-direction: column;
             position: fixed;
             top: 0;
@@ -36,7 +37,9 @@
         }
 
         .logo {
-            margin-bottom: 60px;
+            margin-top: 15px;
+            margin-bottom: 45px;
+            margin-left: 30px;
         }
 
         .logo:hover {
@@ -48,11 +51,7 @@
             color: rgb(108, 108, 108);
             font-weight: 200;
             margin-bottom: 35px;
-        }
-
-        nav i:hover {
-            color: white;
-            cursor: pointer;
+            margin-left: 45px;
         }
 
         .main {
@@ -64,13 +63,14 @@
 
         .sec1 {
             padding: 10px;
-            background-color: rgb(12, 12, 12);
+            background-color: rgb(0, 0, 0);
             display: flex;
         }
 
         .movie {
             width: 50%;
             border-radius: 15px;
+            z-index: 5;
         }
 
         .grp {
@@ -151,13 +151,12 @@
         .movdesc {
             width: 100%;
             min-height: 200px;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             position: relative;
             bottom: 370px;
             background: linear-gradient(to bottom, transparent, #00000079, #000000);
-
         }
 
         .new {
@@ -190,7 +189,7 @@
         .watch {
             margin-top: 30px;
             font-size: 15px;
-            text-shadow: 0 0 30px rgb(0, 0, 0);
+            text-shadow: 0 0 50px rgb(0, 0, 0);
             padding: 10px;
             width: 300px;
             border-radius: 7px;
@@ -220,7 +219,7 @@
         }
 
         .film {
-            padding: 18px;
+            padding: 20px 15px;
             display: flex;
             overflow: scroll;
             gap: 20px;
@@ -249,21 +248,66 @@
             cursor: pointer;
             border: 2px solid white;
         }
+        .llnav{
+            display: flex;
+            gap: 10px;
+        }
+        .ndesc{
+            font-family: calibri;
+            color: white;
+            opacity: 0;
+            transition: 0.4s all ease;
+        }
+        .lnav:hover{
+            z-index: 20;
+            cursor: pointer;
+            background: linear-gradient(to left, transparent, #000000,#000000,#000000);
+            .llnav i{
+                color: white;
+            }
+            .ndesc{
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <nav>
+        <nav class="lnav">
             <img src="logo.png" alt="" width="55px" class="logo">
-            <i class="fa-solid fa-house"></i>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-tv"></i>
-            <i class="fa-solid fa-cookie"></i>
-            <i class="fa-solid fa-person-running"></i>
-            <i class="fa-solid fa-video"></i>
-            <i class="fa-solid fa-list"></i>
-            <i class="fa-solid fa-circle-user"></i>
+            <div class="llnav">
+                <i class="fa-solid fa-house"></i>
+                <p class="ndesc">Home</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p class="ndesc">Search</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-tv"></i>
+                <p class="ndesc">TV</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-cookie"></i>
+                <p class="ndesc">Movies</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-person-running"></i>
+                <p class="ndesc">Sports</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-video"></i>
+                <p class="ndesc">Sparks</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-list"></i>
+                <p class="ndesc">Categories</p>
+            </div>
+            <div class="llnav">
+                <i class="fa-solid fa-circle-user"></i>
+                <p class="ndesc">MySpace</p>
+            </div>
         </nav>
         <div class="main">
             <!-- section1 -->
@@ -370,7 +414,7 @@
                         <img src="2.jpg" alt="" width="180px" class="series">
                         <img src="3.jpg" alt="" width="180px" class="series">
                         <img src="4.jpg" alt="" width="180px" class="series">
-                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="5.jpg" alt="" width="180px" class="series">
                     </div>
                     <h5 class="lr">Studios</h5>
                     <div class="film">
