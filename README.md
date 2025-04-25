@@ -8,7 +8,6 @@ This is a simple Hotstar Clone built using HTML and CSS.
 - **CSS** – Custom styling for better visuals  
 
 ## Features  
-- Responsive design for different screen sizes  
 - Enhanced styling with CSS  
 
 ## How to Run  
